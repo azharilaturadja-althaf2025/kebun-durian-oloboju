@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Profesional & Kebun Durian</title>
+    <title>Profil Agribisnis - Kebun Durian Oloboju</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f0f2f5; color: #333; }
         .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 10px; }
         .section { margin-top: 25px; padding: 15px; background: #f9fff9; border-left: 5px solid #27ae60; border-radius: 5px; }
+        .quote { font-style: italic; color: #666; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
         
         /* Gaya Tombol WhatsApp */
         .btn-wa {
@@ -16,7 +17,7 @@
             align-items: center;
             background-color: #25D366;
             color: white;
-            padding: 12px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -25,7 +26,7 @@
         }
         .btn-wa:hover { background-color: #128C7E; transform: scale(1.05); }
 
-        /* Gaya Buku Tamu Sederhana */
+        /* Gaya Buku Tamu */
         .guestbook {
             margin-top: 30px;
             padding: 20px;
@@ -33,33 +34,37 @@
             border-radius: 10px;
             text-align: center;
         }
-        textarea { width: 100%; height: 100px; margin-top: 10px; border-radius: 5px; border: 1px solid #ddd; padding: 10px; }
+        textarea { width: 100%; height: 100px; margin-top: 10px; border-radius: 5px; border: 1px solid #ddd; padding: 10px; box-sizing: border-box; }
+        .btn-kirim { background:#2c3e50; color:white; padding:10px 25px; border:none; border-radius:5px; cursor:pointer; margin-top: 10px; font-weight: bold; }
+        .btn-kirim:hover { background: #34495e; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Profil Profesional & Portofolio</h1>
-        <p>Saya adalah <strong>ASN Pemerintah Daerah</strong> yang berdedikasi dalam pelayanan publik serta aktif sebagai mahasiswa Hukum semester 8.</p>
+        <h1>Profil Pengembangan Agribisnis</h1>
+        <p>Saya adalah <strong>ASN Pemerintah Daerah</strong> yang saat ini mendedikasikan waktu luang untuk pengembangan sektor pertanian lokal melalui budidaya durian unggul.</p>
         
         <div class="section">
-            <h3>Fokus & Minat:</h3>
+            <h3>Fokus Agribisnis Utama:</h3>
             <ul>
-                <li><strong>Hukum:</strong> Sedang menyelesaikan tugas akhir dan praktik hukum.</li>
-                <li><strong>Agribisnis:</strong> Pengembangan durian Black Thorn & Bawor di Oloboju, Sigi.</li>
-                <li><strong>Pasar Modal:</strong> Trader aktif di instrumen Forex dan Cryptocurrency.</li>
+                <li><strong>Komoditas:</strong> Pengembangan durian varietas **Black Thorn (Duri Hitam)** dan **Bawor**.</li>
+                <li><strong>Lokasi:</strong> Lahan bekas sawah di desa **Oloboju**, Sigi Regency.</li>
+                <li><strong>Skala Proyek:</strong> Tahap awal penanaman 22 pohon di lahan seluas 44m x 48m.</li>
             </ul>
         </div>
 
-        <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Pak%20Azhari,%20saya%20tertarik%20berdiskusi%20tentang..." class="btn-wa" target="_blank">
-            Chat via WhatsApp
+        <p class="quote">"Membangun kemandirian pangan lokal dengan teknologi dan varietas unggul."</p>
+
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Pak%20Azhari,%20saya%20tertarik%20berdiskusi%20tentang%20durian..." class="btn-wa" target="_blank">
+            Hubungi via WhatsApp
         </a>
 
         <div class="guestbook">
             <h3>Buku Tamu Digital</h3>
-            <p>Punya saran untuk kebun durian saya atau diskusi hukum? Tinggalkan pesan di bawah ini:</p>
+            <p>Punya saran atau ingin berdiskusi mengenai teknik budidaya durian? Tinggalkan pesan di bawah ini:</p>
             <textarea id="pesanTamu" placeholder="Tulis pesan Anda di sini..."></textarea>
-            <br><br>
-            <button onclick="kirimPesan()" style="background:#2c3e50; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Kirim ke WhatsApp</button>
+            <br>
+            <button onclick="kirimPesan()" class="btn-kirim">Kirim Pesan</button>
         </div>
     </div>
 
@@ -69,6 +74,7 @@
             if (pesan === "") {
                 alert("Silakan tulis pesan terlebih dahulu.");
             } else {
+                // Jangan lupa ganti nomor di bawah ini dengan nomor HP Anda
                 var url = "https://wa.me/6282291342699?text=" + encodeURIComponent(pesan);
                 window.open(url, '_blank');
             }
